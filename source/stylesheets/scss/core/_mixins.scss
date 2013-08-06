@@ -1,0 +1,106 @@
+// buttons
+	// button color type
+	@mixin button-color-type($base-color, $text-color) {
+		color: $text-color;
+		background: $base-color;
+		border: 1px solid darken($base-color, 4);
+		&:hover {
+			color: darken($text-color, 8);
+			border-color: darken($base-color, 8);
+			background: darken($base-color, 4);
+		}
+		&:focus {
+			outline: 0;
+			color: darken($text-color, 9);
+			border-color: darken($base-color, 9);
+			background: darken($base-color, 5);
+		}
+		&:active,
+		&.active {
+			color: darken($text-color, 16);
+			border-color: darken($base-color, 16);
+			background: darken($base-color, 8);
+		}
+		&.disable {
+			opacity: .5;
+			cursor: default;
+			&:hover,
+			&:focus,
+			&:active {
+				background: $base-color;
+				border-color: darken($base-color, 4);
+				color: $text-color;
+			}
+		}
+	}
+
+	// invert button color type
+	@mixin invert-button-color-type($base-color, $text-color) {
+		color: $text-color;
+		background: $base-color;
+		border: 1px solid darken($base-color, 4);
+		&:hover {
+			border-color: $base-color;
+			background: lighten($base-color, 4);
+		}
+		&:focus {
+			outline: 0;
+			border-color: lighten($base-color, 1);
+			background: lighten($base-color, 5);
+		}
+		&:active {
+			background: lighten($base-color, 8);
+		}
+		&.disable {
+			opacity: .5;
+			cursor: default;
+			&:hover,
+			&:focus,
+			&:active {
+				background: $base-color;
+				border-color: darken($base-color, 4);
+				color: $text-color;
+			}
+		}
+	}
+
+// containers
+  // well
+  @mixin well($base-color, $text-color) {
+  	color: $text-color;
+		background: $base-color;
+		border: 1px solid darken($base-color, 4);
+  }
+
+// layout
+	// position
+  @mixin position ($position: relative, $coordinates: 0 0 0 0) {
+	  @if type-of($position) == list {
+	    $coordinates: $position;
+	    $position: relative;
+	  }
+
+	  $top: nth($coordinates, 1);
+	  $right: nth($coordinates, 2);
+	  $bottom: nth($coordinates, 3);
+	  $left: nth($coordinates, 4);
+
+	  position: $position;
+
+	  @if not(unitless($top)) {
+	    top: $top;
+	  }
+
+	  @if not(unitless($right)) {
+	    right: $right;
+	  }
+
+	  @if not(unitless($bottom)) {
+	    bottom: $bottom;
+	  }
+
+	  @if not(unitless($left)) {
+	    left: $left;
+	  }
+	}
+

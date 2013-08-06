@@ -1,0 +1,254 @@
+// ----
+// landing page
+// ----
+#wrapper {
+  @include position(absolute);
+  height: 100%;
+  width: 100%;
+}
+#bg-image {
+  height: 100%;
+  width: 100%;
+  @include position(fixed, 0px 0 0 0);
+  background-image: url('/images/flatirons@2x.jpg');
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  > div {
+    background: rgba($lightest-gray, .65);
+    width: 100%;
+    height: 100%;
+  }
+}
+nav {
+  @include rhythm(.5,0,0,0);
+  z-index: 11;
+  .logo {
+    display: inline-block;
+    height: 30px;
+    width: 60px;
+    text-indent: em(-9999px);
+    background: url("/images/logo_techstars_noTag.svg") no-repeat 50% 0;
+    background-size: 40px;
+    margin-top: 4px;
+  }
+  .btn.primary.invert {
+      @include border-radius(0);
+      @include padding-leader(.75);
+      height: 100%;
+    &.pull-left {
+      border-width: 0 1px 0 0;
+      @include position(absolute, 0 0 0 0px);
+    }
+    &.pull-right {
+      border-width: 0 0 0 1px;
+      @include position(absolute, 0 0px 0 0);
+    }
+  }
+}
+section {
+  @include position(relative);
+  z-index: 1;
+  header {
+    &.row {
+      @include padding-trailer(0);
+    }
+    h1 {
+      @include adjust-font-size-to(23.040px, 1.646);
+      border-bottom: 1px solid rgba($gray, .25);
+    }
+    h2 {
+      @include adjust-font-size-to(14.746px, 1.053);
+    }
+  }
+  p {
+    @include rhythm(0,0,0,.5);
+  }
+  #toggle-forms {
+    .active {
+      border-width: 1px;
+    }
+  }
+  form {
+    background: rgba($lightest-gray, .75);
+    @include border-radius($radius);
+    max-width: em(600px);
+    margin: 0 auto;
+    @include rhythm(1,.5,.5,.5);
+    padding-left: $font-unit * .5;
+    padding-right: $font-unit * .5;
+    input:focus {
+      background: rgba($lightest-gray, .5) !important;
+    }
+    .control-group.inline {
+      input {
+        @extend .col12;
+      }
+    }
+    label {
+      display: none;
+    }
+  }
+  .title {
+    border-bottom: 1px solid rgba($gray, .25);
+    &.row {
+      @include trailer(.5);
+      .small {
+        @include padding-leader(.75);
+      }
+    }
+    h1 {
+      @include adjust-font-size-to(21.875px, 1.563);
+      border-bottom: none;
+    }
+    + article.row {
+      @include trailer(1);
+    }
+  }
+  .logo {
+    @include rhythm(0,.25,0,0);
+    padding-left: $base-rhythm-unit * .25;
+    padding-right: $base-rhythm-unit * .25;
+    border: 1px solid rgba($gray, .25);
+    background: $lightest-gray;
+    + * {
+      padding-left: $base-rhythm-unit * .5;
+    }
+  }
+  .meta {
+    > .row {
+      @include trailer(.5);
+      &:last-child {
+        @include trailer(0);
+      }
+    }
+  }
+  .team {
+    @include rhythm(1,0,0,1);
+    li {
+      border-top: 1px solid rgba($gray, .25);
+      @include rhythm(.5,.5,0,0);
+      &:last-child {
+        @include trailer(1);
+      }
+      .avatar {
+        display: inline-block;
+        height: $base-rhythm-unit * 2;
+        width: $base-rhythm-unit * 2;
+        background: $secondary;
+        @include border-radius($radius);
+        overflow: hidden;
+        + span {
+          vertical-align: top;
+        }
+      }
+    }
+  }
+}
+// ----
+// landing countdown
+// ----
+.countdownHolder {
+  clear: both;
+  @include adjust-font-size-to(17.500px, 1.25);
+  @include rhythm(0,0,0,0);
+  .countDiv {
+    display: inline-block;
+    width: $font-unit;
+    height: $base-rhythm-unit;
+    position: relative;
+    &:before,
+    &:after {
+      content: '';
+      width: 2px;
+      height: 2px;
+      background: $gray;
+      @include position(absolute, ($font-unit * .925) 0 0 50% );
+      @include border-radius(100%);
+    }
+    &:after {
+      top: ($font-unit * .625);
+    }
+  }
+  .position {
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    width: $font-unit * .625;
+    height: $base-rhythm-unit;
+  }
+  .digit {
+    position: absolute;
+    display: block;
+    &.static { }
+  }
+}
+
+// ----
+// video stream
+// ----
+.video-stream {
+  #trigger-livestream {
+    @include leader(1);
+  }
+  .livestream, iframe {
+    min-width: 320px;
+    min-height: 480px;
+    display: block;
+    height: 100%;
+    iframe {
+      @extend .row;
+    }
+  }
+}
+
+// ----
+// off canvas toggle
+// ----
+.small-off-canvas {
+  background-color: $lightest-gray;
+  height: 100%;
+  @include position(fixed, ($font-unit * 2) 0 0 -100%);
+  @include transition(ease all .3s);
+  border-right: 1px solid rgba($gray, .25);
+  &.active {
+    left: 0;
+  }
+}
+// ----
+// small tablet up
+// ----
+@media screen and (min-width: 640px) {
+  nav {
+    #small-off-canvas {
+      display: none;
+    }
+  }
+  section form {
+    .control-group.inline {
+      label {
+        display: inline-block;
+      }
+      input {
+        width: 75% !important;
+      }
+    }
+  }
+  article.row > .col4.hull-widget {
+    padding-left: $base-rhythm-unit;
+  } 
+  .video-stream {
+    #trigger-livestream {
+      @include leader(2);
+    }
+  }
+  .small-off-canvas {
+    display: inline-block;
+    @include position(static, 0 0 0 0);
+    border: none;
+    background: transparent;
+  }
+}

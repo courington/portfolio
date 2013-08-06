@@ -1,0 +1,65 @@
+// ----
+// Base Colors
+// ----
+	// grayscale
+	$black: rgb(0,0,0);
+	$white: rgb(255,255,255);
+	$gray: lighten($black, 50%);
+	$light-gray: lighten($black, 75%);
+	$lighter-gray: lighten($black, 85%);
+	$lightest-gray: lighten($black, 95%);
+	$dark-gray: lighten($black, 25%);
+	$darker-gray: lighten($black, 15%);
+	$darkest-gray: lighten($black, 5%);
+
+	// brand colors
+	$primary: rgb(34,178,77);
+	$light-primary: lighten($primary, 25);
+	$dark-primary: darken($primary, 25);
+	$secondary: rgb(110,145,163);
+	$light-secondary: lighten($secondary, 25);
+	$dark-secondary: darken($secondary, 25);
+
+	// utility colors
+	$alert: rgb(180,20,30);
+	$success: rgb(20,180,30);
+
+	// complimentary colors
+	$primary-compliment: adjust-hue($primary, 180deg);
+	$secondary-compliment: adjust-hue($secondary, 180deg);
+
+	// analogous colors
+	$primary-triad-warm: adjust-hue($primary, -135deg);
+	$primary-triad-cool: adjust-hue($primary, 135deg);
+
+	// typography
+	$font-color: $dark-gray;
+
+// ----
+// Typography
+// ----
+	// Base Font Style
+	$main-font: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+	// Secondary Font Style
+	$secondary-font: Georgia, 'Times New Roman', Times, serif;
+
+// ----
+// Units
+// ----
+	// typographic
+		// modular scale based on major third 4:5
+		$relative-font-sizing: true;
+
+		// base-font-size && base-line-height
+		$base-font-size: 14px;
+		$base-line-height: 21.875px;
+
+		// font unit converts px to em of base-font size
+		$font-unit: if($relative-font-sizing, 1em, $base-font-size);
+
+		// base rhythm unit used for spacing
+		$base-rhythm-unit: $base-line-height / $base-font-size * $font-unit;
+
+	// radius
+	$radius: $font-unit * .25;

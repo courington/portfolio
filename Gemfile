@@ -2,10 +2,23 @@
 # the following line to use "https"
 source 'http://rubygems.org'
 
-gem "middleman", "~>3.1.4"
+gem "middleman"
+
+# sprockets support for asset pipeline
+gem 'middleman-sprockets'
 
 # Live-reloading plugin
-gem "middleman-livereload", "~> 3.1.0"
+gem "middleman-livereload"
+
+# compress images in middleman app
+gem 'middleman-smusher'
+
+# blogging
+gem 'middleman-blog'
+
+# syntactically awesome stylesheets
+gem "sass"
+gem "compass"
 
 # For faster file watcher updates on Windows:
 gem "wdm", "~> 0.1.0", :platforms => [:mswin, :mingw]

@@ -1,0 +1,65 @@
+.hide {
+	opacity: 0;
+}
+
+.ease-in {
+  -webkit-animation-name: ease-in;
+  animation-name: ease-in;
+  -webkit-animation-duration: .3s;
+  animation-duration: .3s;
+}
+
+.ease-out {
+	-webkit-animation-name: ease-out;
+	animation-name: ease-out;
+  -webkit-animation-duration: .3s;
+  animation-duration: .3s;
+}
+
+// ----
+// ease-in
+// ----
+@-webkit-keyframes ease-in {
+  from {
+    -webkit-transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes ease-in {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+// ----
+// ease-out
+// ----
+@-webkit-keyframes ease-out {
+  from {
+    -webkit-transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: scale(0);
+    opacity: 0;
+  }
+}
+@keyframes ease-out {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(0);
+    opacity: 0;
+  }
+}

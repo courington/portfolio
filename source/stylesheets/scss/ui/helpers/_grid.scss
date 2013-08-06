@@ -1,0 +1,170 @@
+// set page max width in px to convert to em
+$page-max-width: 1024px;
+
+// set grid column count
+$grid-count: 12;
+$grid-width: percentage( 1 / $grid-count );
+
+// pulls
+[class^="pull-"] {
+	display: inline-block;
+	&:before {
+		content: '';
+		clear: both;
+		display: block;
+	}
+}
+.pull-left {
+	float: left !important;
+}
+.pull-right {
+	float: right !important;
+}
+.clearfix {
+	&:after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+}
+
+.row {
+	width: $grid-width * 12;
+	@include rhythm(1,1,1,1);
+	display: block;
+	@extend .clearfix;
+}
+
+[class*="col"] .row {
+	@include rhythm(0,0,0,0);
+}
+
+// 12 COLUMNS
+[class*="col"] {
+	width: $grid-width;
+	display: inline-block;
+	float: left;
+	@extend .clearfix;
+}
+.col1 {
+	width: $grid-width;
+}
+.col2 {
+	width: $grid-width * 2;
+}
+.col3 {
+	width: $grid-width * 3;
+}
+.col4 {
+	width: $grid-width * 4;
+}
+.col5 {
+	width: $grid-width * 5;
+}
+.col6 {
+	width: $grid-width * 6;
+}
+.col7 {
+	width: $grid-width * 7;
+}
+.col8 {
+	width: $grid-width * 8;
+}
+.col9 {
+	width: $grid-width * 9;
+}
+.col10 {
+	width: $grid-width * 10;
+}
+.col11 {
+	width: $grid-width * 11;
+}
+.col12 {
+	width: $grid-width * 12;
+}
+
+// OFFSETS
+.offset1 {
+	margin-left: $grid-width;
+}
+.offset2 {
+	margin-left: $grid-width * 2;
+}
+.offset3 {
+	margin-left: $grid-width * 3;
+}
+.offset4 {
+	margin-left: $grid-width * 4;
+}
+.offset5 {
+	margin-left: $grid-width * 5;
+}
+.offset6 {
+	margin-left: $grid-width * 6;
+}
+.offset7 {
+	margin-left: $grid-width * 7;
+}
+.offset8 {
+	margin-left: $grid-width * 8;
+}
+.offset9 {
+	margin-left: $grid-width * 9;
+}
+.offset10 {
+	margin-left: $grid-width * 10;
+}
+.offset11 {
+	margin-left: $grid-width * 11;
+}
+.offset12 {
+	margin-left: $grid-width * 12;
+}
+
+// ----
+// grid overwrites for small screen
+// ----
+@media screen and (max-width: 640px) {
+	.small12 {
+		width: $grid-width * 12 !important;
+	}
+	.small11 {
+		width: $grid-width * 11 !important;
+	}
+	.small10 {
+		width: $grid-width * 10 !important;
+	}
+	.small9 {
+		width: $grid-width * 9 !important;
+	}
+	.small8 {
+		width: $grid-width * 8 !important;
+	}
+	.small7 {
+		width: $grid-width * 7 !important;
+	}
+	.small6 {
+		width: $grid-width * 6 !important;
+	}
+	.small5 {
+		width: $grid-width * 5 !important;
+	}
+	.small4 {
+		width: $grid-width * 4 !important;
+	}
+	.small3 {
+		width: $grid-width * 3 !important;
+	}
+	.small2 {
+		width: $grid-width * 2 !important;
+	}
+	.small1 {
+		width: $grid-width * 1 !important;
+	}
+}
+
+
+
+
+
+

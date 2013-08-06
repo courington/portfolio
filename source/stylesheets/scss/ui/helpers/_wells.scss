@@ -1,0 +1,15 @@
+.well {
+	@include rhythm(1,.5,.5,1);
+	padding-left: $base-rhythm-unit;
+	padding-right: $base-rhythm-unit;
+	margin-left: $base-rhythm-unit;
+	margin-right: $base-rhythm-unit;
+	@include border-radius($radius);
+	@include well($lighter-gray, $dark-gray);
+	&.invert {
+		@include well($darker-gray, $light-gray);
+	}
+	> h1 {
+		@include adjust-font-size-to(21.875px, 1.563);
+	}
+}

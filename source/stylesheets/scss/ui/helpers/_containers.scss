@@ -1,0 +1,14 @@
+* {
+	@include box-sizing(border-box);
+}
+
+html {
+	background: $white url("../images/background.png") repeat 0 0;
+}
+
+.container {
+	@extend .row;
+	max-width: em($page-max-width, $base-font-size); // convert px to em
+	margin: 0 auto;
+	padding: $base-rhythm-unit ($font-unit * .5);
+}

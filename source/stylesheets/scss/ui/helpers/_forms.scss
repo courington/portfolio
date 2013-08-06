@@ -1,0 +1,73 @@
+form {
+	fieldset {
+		border: none;
+	}
+	.hint {
+		color: $gray;
+	}
+}
+
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"] {
+	// reset
+	@include box-shadow(none);
+	border: none;
+	// style
+	color: $gray;
+	@include rhythm(0,.25,.25,0);
+	padding-left: ($base-rhythm-unit * .25);
+	padding-right: ($base-rhythm-unit * .25);
+	border-width: 1px;
+	border-style: solid;
+	border-color: $light-gray;
+	background: rgba($lightest-gray, .25);
+	@include border-radius($radius);
+	@include transition(all ease .3s);
+	&:focus {
+		// reset
+		outline: 0;
+		// style
+		border-color: $primary;
+		color: $dark-gray;
+	}
+}
+
+input[type="email"],
+input[type="url"],
+input[type="search"] {
+	text-transform: lowercase;
+}
+
+.control-group {
+	display: block;
+	@include rhythm(0,0,0,.5);
+	&:last-child {
+		@include trailer(0);
+	}
+	&.inline {
+		@extend .clearfix;
+		width: 100%;
+		.control-label {
+			@include padding-leader(.25);
+			@extend .col3;
+			@extend .pull-left;
+		}
+		input {
+			@extend .col9;
+			@extend .pull-right;
+		}
+	}
+}

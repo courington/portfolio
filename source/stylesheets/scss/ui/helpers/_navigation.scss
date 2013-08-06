@@ -1,0 +1,12 @@
+nav,
+.nav {
+	@include position(relative);
+	&.fixed {
+    @include position(fixed, 0px 0 0 0px);
+    margin: 0;
+    // @include rhythm(0,.5,.5,0);
+    width: 100%;
+    background: rgba($lightest-gray, .95);
+    border-bottom: 1px solid $lighter-gray;
+  }
+}

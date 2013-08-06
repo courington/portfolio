@@ -1,0 +1,17 @@
+.sign {
+	display: inline-block;
+	padding: $font-unit * .25;
+	line-height: 1;
+	background: $primary;
+	color: $lightest-gray !important;
+	text-align: center;
+	@include border-radius($radius);
+	margin-right: $font-unit * .5;
+	&:last-child {
+		margin-right: 0;
+	}
+	&.pill {
+		padding: $font-unit * .375;
+		@include border-radius(100%);
+	}
+}

@@ -1,0 +1,111 @@
+.btn {
+	display: inline-block;
+	text-decoration: none;
+	@include rhythm(0,.5,.5,0);
+	padding-left: $base-rhythm-unit;
+	padding-right: $base-rhythm-unit;
+	@include border-radius($radius);
+	@include transition(all ease .3s);
+	// default .btn variables
+	@include button-color-type($lighter-gray, $dark-gray);
+	// invert default
+	&.invert {
+		@include invert-button-color-type($dark-gray, $lighter-gray);
+	}
+	// primary button
+	&.primary {
+		@include button-color-type($primary, $lightest-gray);
+		&.invert {
+			@include invert-button-color-type($lightest-gray, $primary);
+		}
+	}
+	// secondary button
+	&.secondary {
+		@include button-color-type($secondary, $lightest-gray);
+		&.invert {
+			@include invert-button-color-type($lightest-gray, $secondary);
+		}
+	}
+	// alert button
+	&.alert {
+		@include button-color-type($alert, $lightest-gray);
+		&.invert {
+			@include invert-button-color-type($lightest-gray, $alert);
+		}
+	}
+	// success button
+	&.success {
+		@include button-color-type($success, $lightest-gray);
+		&.invert {
+			@include invert-button-color-type($lightest-gray, $success);
+		}
+	}
+	// sizing
+		// large button
+		&.big {
+			@include adjust-font-size-to(14.746px, 1.053);
+		}
+		&.bigger {
+			@include adjust-font-size-to(17.500px, 1.25);
+		}
+		&.biggest {
+			@include adjust-font-size-to(21.875px, 1.563);
+		}
+		&.huge {
+			@include adjust-font-size-to(36px, 2.571);
+		}
+		// large button
+		&.small,
+		&.btn-small {
+			@include adjust-font-size-to(11.797px, 0.843);
+		}
+		&.smaller {
+			@include adjust-font-size-to(11.200px, 0.8);
+		}
+		&.smallest {
+			@include adjust-font-size-to(9.438px, 0.674);
+		}
+		&.tiny {
+			@include adjust-font-size-to(8.960px, 0.64);
+		}
+	// width
+		// combine .btn.primary.col3 to create a primary button width == .col3
+}
+
+// ----
+// button groups
+// ----
+.btn-group {
+	.btn {
+		@include border-radius(0 0 0 0);
+		border-width: 1px 0 1px 1px;
+		&:first-child {
+			@include border-radius($radius 0 0 $radius);
+		}
+		&:last-child {
+			@include border-radius(0 $radius $radius 0);
+			border-width: 1px 1px 1px 0;
+		}
+	}
+	&.stack {
+		> * {
+			.btn {
+				@include border-radius(0 0 0 0);
+				border-width: 1px 1px 0 1px;
+			}
+			&:first-child {
+				.btn {
+					@include border-radius($radius $radius 0 0);
+				}
+			}
+			&:last-child {
+				.btn {
+					border-width: 1px;
+					@include border-radius(0 0 $radius $radius);
+				}
+			}
+		}
+	}
+}
+
+

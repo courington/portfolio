@@ -1,0 +1,7 @@
+.hull-widget {
+	.btn-angellist,
+	.btn-linkedin {
+		@extend .btn.primary;
+		@extend .btn.small;
+	}
+}
